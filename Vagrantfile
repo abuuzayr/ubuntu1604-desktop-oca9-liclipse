@@ -68,6 +68,7 @@ Vagrant.configure(2) do |config|
 set -e
 export DEBIAN_FRONTEND=noninteractive
 
+sudo locale-gen
 sudo localectl set-locale LANG="en_US.UTF-8"
 
 OE_USER="odoo"
