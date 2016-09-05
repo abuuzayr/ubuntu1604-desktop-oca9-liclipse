@@ -72,8 +72,8 @@ sudo locale-gen
 sudo localectl set-locale LANG="en_US.UTF-8"
 
 OE_USER="odoo"
-OE_HOME="/opt/$OE_USER"
-OE_HOME_EXT="/opt/$OE_USER/${OE_USER}-server"
+OE_HOME="/$OE_USER"
+OE_HOME_EXT="/$OE_USER/${OE_USER}-server"
 
 OE_PORT="8069"
 OE_VERSION="9.0"
@@ -114,11 +114,14 @@ sudo mkdir /var/log/$OE_USER
 sudo chown $OE_USER:$OE_USER /var/log/$OE_USER
 
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git $OE_HOME_EXT/
+git config --global core.fileMode false
 
 sudo su $OE_USER -c "mkdir $OE_HOME/custom"
 sudo su $OE_USER -c "mkdir $OE_HOME/custom/addons"
 
 sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
+find $OE_HOME_EXT/ -type d -print0 | sudo xargs -0 chmod 2775
+find $OE_HOME_EXT/ -type f -print0 | sudo xargs -0 chmod 0664
 
 sudo cp $OE_HOME_EXT/debian/openerp-server.conf /etc/${OE_CONFIG}.conf
 sudo chown $OE_USER:$OE_USER /etc/${OE_CONFIG}.conf
