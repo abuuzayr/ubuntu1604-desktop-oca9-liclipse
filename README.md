@@ -13,6 +13,10 @@ While the VM will be started up, Odoo and Liclipse may not be installed yet.
 
 You can track the progress of the installation in the shell that you used for the `vagrant up` command.
 
+## How to know that the VM setup is complete?
+
+At the end of the setup, the VM will restart.
+
 ## Prerequisites
 
 The following must be installed:
