@@ -146,6 +146,8 @@ Type=Application
 Categories=Utility;Application;Development;IDE
 EOF
 
+sudo shutdown -r now
+
 SHELL
 
 end
