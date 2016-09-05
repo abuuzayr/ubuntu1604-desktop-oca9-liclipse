@@ -130,7 +130,7 @@ sudo su root -c "echo 'logfile = /var/log/$OE_USER/$OE_CONFIG$1.log' >> /etc/${O
 
 sudo su root -c "echo 'addons_path=$OE_HOME_EXT/addons,$OE_HOME/custom/addons' >> /etc/${OE_CONFIG}.conf"
 
-sudo wget http://update.liclipse.com/standalone/liclipse_3.1.0_linux.gtk.x86_64.tar.gz
+sudo wget http://update.liclipse.com/standalone/liclipse_3.1.0_linux.gtk.x86_64.tar.gz -q
 sudo tar xvzf liclipse_3.1.0_linux.gtk.x86_64.tar.gz
 sudo mv liclipse /opt
 sudo ln -s /opt/liclipse/LiClipse /usr/bin/liclipse
