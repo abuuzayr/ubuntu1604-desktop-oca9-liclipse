@@ -143,6 +143,8 @@ Type=Application
 Categories=Utility;Application;Development;IDE
 EOF
 
+sudo localectl set-locale LANG="en_US.UTF-8"
+
 SHELL
 
 end
