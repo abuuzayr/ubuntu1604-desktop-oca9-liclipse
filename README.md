@@ -7,16 +7,6 @@ Odoo Community Backports are cloned from [OCA/OCB](https://github.com/oca/ocb)
 You are now on the master branch, which initializes the version of ubuntu
 with Odoo installed.
 
-Please note that on the first `vagrant up` command, it will take a while to run and install.
-
-While the VM will be started up, Odoo and Liclipse may not be installed yet.
-
-You can track the progress of the installation in the shell that you used for the `vagrant up` command.
-
-## How to know that the VM setup is complete?
-
-At the end of the setup, the VM will restart.
-
 ## Prerequisites
 
 The following must be installed:
@@ -34,6 +24,23 @@ vagrant up
 ```
 
 Note that the default password for user `vagrant` is **`vagrant`**.
+
+Please note that on the first `vagrant up` command, it will take a while to run 
+and install.
+
+While the VM will be started up, Odoo and Liclipse may not be installed yet.
+
+You can track the progress of the installation in the shell that you used for 
+the `vagrant up` command.
+
+## How to know that the VM setup is complete?
+
+At the end of the setup, the VM will restart.
+
+Try starting up the Terminal application. If it starts up immediately, the 
+installation and setup was successful. If it takes a while then refuses to load, 
+the installation was unsuccessful. To fix this issue, run the following
+command: `vagrant destroy && vagrant up`
 
 *If you face a blank screen after you boot with no login screen or
 usable desktop interface, do tear down and up the entire vagrant
