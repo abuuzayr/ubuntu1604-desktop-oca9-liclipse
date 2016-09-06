@@ -71,9 +71,9 @@ export DEBIAN_FRONTEND=noninteractive
 sudo locale-gen
 sudo localectl set-locale LANG="en_US.UTF-8"
 
-OE_USER="odoo"
-OE_HOME="/$OE_USER"
-OE_HOME_EXT="/$OE_USER/${OE_USER}-server"
+OE_USER="vagrant"
+OE_HOME="/home/$OE_USER"
+OE_HOME_EXT="/home/$OE_USER/${OE_USER}-server"
 
 OE_PORT="8069"
 OE_VERSION="9.0"
@@ -107,7 +107,7 @@ sudo gdebi --n `basename $WKHTMLTOX_X64`
 sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
 sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
 
-sudo adduser --system --quiet --shell=/bin/bash --home=$OE_HOME --gecos 'ODOO' --group $OE_USER
+# sudo adduser --system --quiet --shell=/bin/bash --home=$OE_HOME --gecos 'ODOO' --group $OE_USER
 sudo adduser $OE_USER sudo
 
 sudo mkdir /var/log/$OE_USER
@@ -116,10 +116,10 @@ sudo chown $OE_USER:$OE_USER /var/log/$OE_USER
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git $OE_HOME_EXT/
 git config --global core.fileMode false
 
-sudo su $OE_USER -c "mkdir $OE_HOME/custom"
-sudo su $OE_USER -c "mkdir $OE_HOME/custom/addons"
+sudo su $OE_USER -c "mkdir $OE_HOME_EXT/custom"
+sudo su $OE_USER -c "mkdir $OE_HOME_EXT/custom/addons"
 
-sudo chown -R $OE_USER:$OE_USER $OE_HOME/*
+sudo chown -R $OE_USER:$OE_USER $OE_HOME
 find $OE_HOME_EXT/ -type d -print0 | sudo xargs -0 chmod 2775
 find $OE_HOME_EXT/ -type f -print0 | sudo xargs -0 chmod 0664
 
