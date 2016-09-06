@@ -116,9 +116,6 @@ sudo chown $OE_USER:$OE_USER /var/log/$OE_USER
 sudo git clone --depth 1 --branch $OE_VERSION https://github.com/OCA/OCB.git $OE_HOME_EXT/
 git config --global core.fileMode false
 
-sudo su $OE_USER -c "mkdir $OE_HOME_EXT/custom"
-sudo su $OE_USER -c "mkdir $OE_HOME_EXT/custom/addons"
-
 sudo chown -R $OE_USER:$OE_USER $OE_HOME
 find $OE_HOME_EXT/ -type d -print0 | sudo xargs -0 chmod 2775
 find $OE_HOME_EXT/ -type f -print0 | sudo xargs -0 chmod 0664
@@ -132,6 +129,9 @@ sudo sed -i s/"; admin_passwd.*"/"admin_passwd = $OE_SUPERADMIN"/g /etc/${OE_CON
 sudo su root -c "echo 'logfile = /var/log/$OE_USER/$OE_CONFIG$1.log' >> /etc/${OE_CONFIG}.conf"
 
 sudo su root -c "echo 'addons_path=$OE_HOME_EXT/addons,$OE_HOME_EXT/custom/addons' >> /etc/${OE_CONFIG}.conf"
+
+sudo su $OE_USER -c "mkdir $OE_HOME_EXT/custom"
+sudo su $OE_USER -c "mkdir $OE_HOME_EXT/custom/addons"
 
 sudo wget http://update.liclipse.com/standalone/liclipse_3.1.0_linux.gtk.x86_64.tar.gz -q
 sudo tar xvzf liclipse_3.1.0_linux.gtk.x86_64.tar.gz
