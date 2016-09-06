@@ -131,7 +131,7 @@ sudo sed -i s/"db_user = .*"/"db_user = $OE_USER"/g /etc/${OE_CONFIG}.conf
 sudo sed -i s/"; admin_passwd.*"/"admin_passwd = $OE_SUPERADMIN"/g /etc/${OE_CONFIG}.conf
 sudo su root -c "echo 'logfile = /var/log/$OE_USER/$OE_CONFIG$1.log' >> /etc/${OE_CONFIG}.conf"
 
-sudo su root -c "echo 'addons_path=$OE_HOME_EXT/addons,$OE_HOME/custom/addons' >> /etc/${OE_CONFIG}.conf"
+sudo su root -c "echo 'addons_path=$OE_HOME_EXT/addons,$OE_HOME_EXT/custom/addons' >> /etc/${OE_CONFIG}.conf"
 
 sudo wget http://update.liclipse.com/standalone/liclipse_3.1.0_linux.gtk.x86_64.tar.gz -q
 sudo tar xvzf liclipse_3.1.0_linux.gtk.x86_64.tar.gz
