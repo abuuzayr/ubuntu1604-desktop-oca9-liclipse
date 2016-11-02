@@ -55,6 +55,7 @@ Vagrant.configure(2) do |config|
   end
 
   config.vm.synced_folder "../odoo/gronex/addons/gvh", "/home/vagrant/vagrant-server/custom/gvh"
+  config.vm.synced_folder "../odoo/gronex/addons/vendor", "/home/vagrant/vagrant-server/custom/vendor"
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at
