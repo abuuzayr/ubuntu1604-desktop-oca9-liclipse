@@ -14,6 +14,9 @@ The following must be installed:
 + [Vagrant](https://www.vagrantup.com/)
 + [Virtualbox 5.0.4 or later](https://www.virtualbox.org/)
 
+To make this vagrant work best, put the [Odoo repo](https://www.virtualbox.org/)
+in the same parent folder as this Vagrant folder.
+
 ## Usage
 
 ```shell
@@ -25,20 +28,20 @@ vagrant up
 
 Note that the default password for user `vagrant` is **`vagrant`**.
 
-Please note that on the first `vagrant up` command, it will take a while to run 
+Please note that on the first `vagrant up` command, it will take a while to run
 and install.
 
 While the VM will be started up, Odoo and Liclipse may not be installed yet.
 
-You can track the progress of the installation in the shell that you used for 
+You can track the progress of the installation in the shell that you used for
 the `vagrant up` command.
 
 ## How to know that the VM setup is complete?
 
 At the end of the setup, the VM will restart.
 
-Try starting up the Terminal application. If it starts up immediately, the 
-installation and setup was successful. If it takes a while then refuses to load, 
+Try starting up the Terminal application. If it starts up immediately, the
+installation and setup was successful. If it takes a while then refuses to load,
 the installation was unsuccessful. To fix this issue, run the following
 command: `vagrant destroy && vagrant up`
 
@@ -59,3 +62,21 @@ Vagrant.configure(2) do |config|
   # ...
 end
 ```
+
+## To start up this vagrant on boot on Windows
+
+To start up this vagrant on boot, put the .bat file in this folder into your
+startup folder.
+
+**Note**: This will only work if this vagrant folder in on the Desktop AND you
+did not rename this folder. If you did either, please edit the first line of the
+.bat file to *cd* into your vagrant folder.
+
+To do so:
+
+1. Right click on Start Menu and click Run
+2. Enter `shell:startup` then OK
+3. An Explorer window will open up
+4. Copy the .bat file in this folder into the folder that opened up in Step 3
+
+If successful, upon starting/restarting your PC, the Vagrant instance will start.
