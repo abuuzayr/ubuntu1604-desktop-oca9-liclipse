@@ -40,11 +40,6 @@ the `vagrant up` command.
 
 At the end of the setup, the VM will restart.
 
-Try starting up the Terminal application. If it starts up immediately, the
-installation and setup was successful. If it takes a while then refuses to load,
-the installation was unsuccessful. To fix this issue, run the following
-command: `vagrant destroy && vagrant up`
-
 *If you are unable to `vagrant ssh` after 30 minutes, do tear down and up the 
 entire vagrant instance again with `vagrant destroy && vagrant up`*
 
