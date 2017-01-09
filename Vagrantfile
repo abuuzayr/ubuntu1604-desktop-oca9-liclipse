@@ -43,7 +43,7 @@ Vagrant.configure(2) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   config.vm.provider 'virtualbox' do |vb|
-    vb.gui = true
+    vb.gui = false
     vb.cpus = 2
     vb.memory = 2048
     vb.customize ['modifyvm', :id, '--paravirtprovider', 'kvm']
@@ -56,6 +56,8 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder "../odoo/gronex/addons/gvh", "/home/vagrant/vagrant-server/custom/gvh"
   config.vm.synced_folder "../odoo/gronex/addons/vendor", "/home/vagrant/vagrant-server/custom/vendor"
+  config.vm.synced_folder "../odoo/gronex/addons/custom", "/home/vagrant/vagrant-server/custom/custom"
+  config.vm.synced_folder "../odoo/oca-addons", "/home/vagrant/vagrant-server/custom/oca"
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at
