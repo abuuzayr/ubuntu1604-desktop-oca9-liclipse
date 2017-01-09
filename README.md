@@ -22,7 +22,7 @@ in the same parent folder as this Vagrant folder.
 ```shell
 git clone git@git.groventure.com:gronex/vagrant-ubuntu1604-desktop-oca9-liclipse.git
 cd vagrant-ubuntu1604-desktop-oca9-liclipse
-git checkout master # This is optional, but make sure you are on the master branch!
+git checkout fawwaz
 vagrant up
 ```
 
@@ -45,9 +45,8 @@ installation and setup was successful. If it takes a while then refuses to load,
 the installation was unsuccessful. To fix this issue, run the following
 command: `vagrant destroy && vagrant up`
 
-*If you face a blank screen after you boot with no login screen or
-usable desktop interface, do tear down and up the entire vagrant
-instance again with `vagrant destroy && vagrant up`*
+*If you are unable to `vagrant ssh` after 30 minutes, do tear down and up the 
+entire vagrant instance again with `vagrant destroy && vagrant up`*
 
 ## Additional Port-Forwarding
 
